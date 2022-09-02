@@ -13,3 +13,5 @@ int gcd(int a, int b){
         return gcd(n, r);
     }
 }
+
+// NOTE: lcm(a, b) can be implemented as a*b/gcd(a, b). A independent implementation will be provided soon though
