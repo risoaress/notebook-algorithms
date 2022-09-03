@@ -32,7 +32,7 @@ vector <int> dist_prime_factors(long long int n){ // Need to make it cleaner... 
 
     while(n>1){
         if(n%curr == 0){
-            if(primes[-1] != curr){
+            if(primes.back() != curr){
                 primes.push_back(curr);
             }
             n /= curr;
@@ -41,7 +41,6 @@ vector <int> dist_prime_factors(long long int n){ // Need to make it cleaner... 
         }
     }
 
-    primes.erase(primes.begin());
     return primes;
 
 }
