@@ -23,3 +23,25 @@ int is_prime(long long int n){ // O(N^1/2)
     }
     return 1;
 }
+
+vector <int> dist_prime_factors(long long int n){ // Need to make it cleaner... It's O(N) though
+
+    vector<int> primes;
+    primes.push_back(2);
+    int curr = 2;
+
+    while(n>1){
+        if(n%curr == 0){
+            if(primes[-1] != curr){
+                primes.push_back(curr);
+            }
+            n /= curr;
+        }else{
+            curr++;
+        }
+    }
+
+    primes.erase(primes.begin());
+    return primes;
+
+}
