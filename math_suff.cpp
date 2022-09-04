@@ -42,5 +42,17 @@ vector <int> dist_prime_factors(long long int n){ // Need to make it cleaner... 
     }
 
     return primes;
+}
 
+int Fibonacci(long int n){
+    
+    int Fib[n];
+    Fib[0] = 1;
+    Fib[1] = 1;
+    
+    for(int i = 2; i<n; i++)
+        Fib[i] = Fib[i-1] + Fib[i-2];
+    
+
+    return Fib[n-1];
 }
