@@ -56,3 +56,19 @@ int Fibonacci(long int n){
 
     return Fib[n-1];
 }
+
+// Quantifiers for a single variable predicate over a vector. I'll improve it later and make it more complex
+
+int forAll(vector <int> v, int (*Pred)(int)){
+    for(int i = 0; i<v.size(); i++)
+        if(!Pred(v[i]))
+         return 0;
+    return 1;
+}
+
+int exists(vector <int> v, int (*Pred)(int)){
+    for(int i = 0; i<v.size(); i++)
+      if(Pred(v[i]))
+        return 1;
+    return 0;
+}
