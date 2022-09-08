@@ -57,7 +57,8 @@ int Fibonacci(long int n){
     return Fib[n-1];
 }
 
-// QSimple quantifiers for a single variable predicate over a vector. I'll improve it later and make it more complex for a practical multivariable propositional calculus.
+// Simple quantifiers for a single variable predicate over a vector. 
+// I'll improve it later and make it more complex for a practical multivariable propositional calculus.
 // For more on quantifiers: Eric Hehner, a Practical Theory of Programming, section 3.1;
 
 int forAll(vector <int> v, int (*Pred)(int)){
