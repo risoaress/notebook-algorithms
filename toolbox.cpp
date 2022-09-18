@@ -2,19 +2,26 @@
 using namespace std;
 
 vector <int> sum_vector(vector <int> v){
- 
-    int n = v.size();
     vector <int> current;
     current.push_back(0);
     
-    for(int i = 0; i<n; i++){     
-        int s = 0;
-        
-        for(int j = 0; j<i+1; j++){
-            s += v[j];
-        }
-        
-        current.push_back(s);
+    for(int i = 0; i<v.size(); i++){
+        current.push_back(v[i]+current[current.size() - 1]);
     }
+    
     return current;
 }
+
+
+string join_vector(vector <string> v){
+    
+    string current = v[0];
+    
+    for(int i = 1; i<v.size(); i++)
+        current += " " + v[i];
+    
+    return current;
+    
+}
+
+// I will add a splitter function soon
