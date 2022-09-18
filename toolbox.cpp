@@ -24,4 +24,23 @@ string join_vector(vector <string> v){
     
 }
 
-// I will add a splitter function soon
+vector <string> split_by_space(string s){
+    
+    vector <string> splitted;
+    vector <int> splitPoints;
+    
+    splitPoints.push_back(0);
+    for(int i = 0; i<s.size(); i++){
+        if(isspace(s[i]))
+            splitPoints.push_back(i+1);
+    }
+    
+    for(int j = 0; j<splitPoints.size()-1; j++){
+        splitted.push_back(s.substr(splitPoints[j], splitPoints[j+1] - splitPoints[j] - 1));
+    }
+    
+        splitted.push_back(s.substr(splitPoints.back(), splitPoints.size()));
+        
+    return splitted;
+    
+}
