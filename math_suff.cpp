@@ -24,6 +24,7 @@ int is_prime(long long int n){ // O(N^1/2)
     return 1;
 }
 
+
 vector <int> dist_prime_factors(long long int n){ // Need to make it cleaner... It's O(N) though
 
     vector<int> primes;
@@ -44,6 +45,21 @@ vector <int> dist_prime_factors(long long int n){ // Need to make it cleaner... 
     return primes;
 }
 
+
+vector <long long> divisors_of(long long n){ // O(sqrt(N))
+    vector <long long> d;
+    
+    for(long long i = 1; i<=sqrt(n); i++)
+       if(n%i == 0){
+           d.push_back(i); 
+           d.push_back(n/i);
+       }
+       
+       return d;
+}
+
+
+
 int Fibonacci(long int n){
     
     int Fib[n];
@@ -61,6 +77,7 @@ int Fibonacci(long int n){
 // I'll improve it later and make it more complex for a practical multivariable propositional calculus.
 // For more on quantifiers: Eric Hehner, a Practical Theory of Programming, section 3.1;
 
+
 int forAll(vector <int> v, int (*Pred)(int)){
     for(int i = 0; i<v.size(); i++)
         if(!Pred(v[i]))
@@ -68,12 +85,14 @@ int forAll(vector <int> v, int (*Pred)(int)){
     return 1;
 }
 
+
 int exists(vector <int> v, int (*Pred)(int)){
     for(int i = 0; i<v.size(); i++)
       if(Pred(v[i]))
         return 1;
     return 0;
 }
+
 
 float sum(vector <float> v, function<float(float)> f = [](float x) -> float { return x; }){
     float current = 0;
