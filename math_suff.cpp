@@ -29,7 +29,7 @@ int is_prime(long long int n){ // O(N^1/2)
 }
 
 
-vector <int> dist_prime_factors(long long int n){ // Need to make it cleaner... It's O(N) though
+vector <int> dist_prime_factors(long long int n){ // Need to make it clean... It's O(N) though
 
     vector<int> primes;
     primes.push_back(2);
