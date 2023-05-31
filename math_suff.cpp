@@ -28,6 +28,16 @@ int is_prime(long long int n){ // O(N^1/2)
     return 1;
 }
 
+int prime_counting(long long n){
+    
+    long long how_many_primes = 0;
+    
+        for(long long i = 2; i<=n; i++)
+            if(is_prime(i))
+                how_many_primes++;
+    
+    return how_many_primes;
+}
 
 vector <int> dist_prime_factors(long long int n){ // Need to make it clean... It's O(N) though
 
